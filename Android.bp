@@ -18,7 +18,10 @@ package {
 
 license {
     name: "external_wireless-regdb_license",
-    visibility: [":__subpackages__"],
+    visibility: [
+        ":__subpackages__",
+        "//device/google/desktop:__subpackages__",
+    ],
     license_kinds: [
         "SPDX-license-identifier-ISC",
     ],
@@ -28,7 +31,7 @@ license {
 }
 
 genrule {
-    name: "wireless-regdb",
+    name: "wireless-regdb-generate",
     srcs: [
         "db.txt",
         "db2fw.py",
@@ -36,4 +39,12 @@ genrule {
     ],
     out: ["regulatory.db"],
     cmd: "$(location db2fw.py) $(out) $(location db.txt)",
+}
+
+filegroup {
+    name: "wireless-regdb-prebuilts",
+    srcs: [
+        "regulatory.db",
+        "regulatory.db.p7s",
+    ],
 }
