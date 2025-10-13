@@ -12,12 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+// Use dedicated namespace to not pollute a global one
+soong_namespace {}
+
 package {
-    default_applicable_licenses: ["external_wireless-regdb_license"],
+    default_applicable_licenses: ["wireless-regdb_license"],
 }
 
 license {
-    name: "external_wireless-regdb_license",
+    name: "wireless-regdb_license",
     visibility: [
         ":__subpackages__",
         "//device/google/desktop:__subpackages__",
