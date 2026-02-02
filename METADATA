@@ -15,7 +15,7 @@ third_party {
   identifier {
     type: "Git"
     value: "https://git.kernel.org/pub/scm/linux/kernel/git/wens/wireless-regdb.git"
-    version: "6f7eac3ed95c9ccfa2095b3f395e86bac88f4934"
+    version: "a827d3af0b93878307921b2c7354934507c91dd5"
     closest_version: "master-2025-10-07"
     primary_source: true
   }
